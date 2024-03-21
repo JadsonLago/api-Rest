@@ -1,3 +1,4 @@
+//importa o arquivo onde será chamada a conexão.
 import app from "./src/app.js"
 
 // definir a porta
