@@ -1,5 +1,6 @@
-import express from "express";
+import express, { json } from "express";
 const app = express();
+app.use(express.json());
 
 // Mock
 const selecoes = [
@@ -20,6 +21,13 @@ app.get("/curso", (req, res) => {
 
 app.get("/selecoes", (req, res) => {
   res.status(200).send(selecoes);
+});
+
+// Rota POST padrão - Inserção de dados
+app.post("/selecoes", (req, res) => {
+  selecoes.push(req.body);
+  res.status(201).send("Seleção cadastrada com sucesso");
+
 });
 
 export default app;
